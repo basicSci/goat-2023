@@ -31,7 +31,7 @@ class NewVisitorTest(unittest.TestCase):
 # She enters "Use peacock feathers to make a fly"
 #   (Edith is very methodical)
 
-# The page updates again, and now shows both items on her list
+# The page updates again; it now shows both items on her list
 
 # Edith wonders whether the site will remember her list.
 #   The she sees that the site has generated a unique URL for her
@@ -45,4 +45,3 @@ class NewVisitorTest(unittest.TestCase):
 
 if __name__ == '__main__':
         unittest.main(warnings='ignore')
-        
