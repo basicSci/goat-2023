@@ -43,7 +43,7 @@ class NewVisitorTest(unittest.TestCase):
 # "1: Buy peacock feathers" as an item in a to-do list
         inputbox.send_keys(Keys.ENTER)
         time.sleep(1)
-        self.check_for_row_in_list_table('Buy peacock feathers')
+        self.check_for_row_in_list_table('1: Buy peacock feathers')
 
         #table = self.browser.find_element('id', 'id_list_table')
         #rows = table.find_elements('tag name', 'tr')
@@ -68,8 +68,8 @@ class NewVisitorTest(unittest.TestCase):
         row_texts = [row.text for row in rows]
 
 # The page updates again; it now shows both items on her list
-        self.check_for_row_in_list_table('Buy peacock feathers')
-        self.check_for_row_in_list_table('Use peacock feathers to make a fly')
+        self.check_for_row_in_list_table('1: Buy peacock feathers')
+        self.check_for_row_in_list_table('2: Use peacock feathers to make a fly')
 
 #        self.assertIn('Buy peacock feathers', [row.text for row in rows])
 #        self.assertIn(
