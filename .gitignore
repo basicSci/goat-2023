@@ -5,3 +5,5 @@ virtualenv
 *.py[co]
 *.swp
 *.sql
+/static
+/lists/static/bootstrap
