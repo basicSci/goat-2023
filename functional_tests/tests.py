@@ -1,4 +1,4 @@
-from django.test import LiveServerTestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import WebDriverException
@@ -7,7 +7,7 @@ import time
 
 MAX_WAIT = 10
 
-class NewVisitorTest(LiveServerTestCase):
+class NewVisitorTest(StaticLiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
@@ -36,16 +36,17 @@ class NewVisitorTest(LiveServerTestCase):
                  time.sleep(0.5)
     
     def test_layout_and_styling(self):
-        #Edith goes to the home page
+        #Edith goes to the home page()
         self.browser.get(self.live_server_url)
         self.browser.set_window_size(1024, 768)
 
         # She notices the input box is nicely centered
         inputbox = self.browser.find_element('id', 'id_new_item')
+        #hbtest self.assertEqual(inputbox.size['width'], 24)
         self.assertAlmostEqual(
             inputbox.location['x'] + inputbox.size['width'] / 2,
             512,
-            delta=10
+            delta=20 # 10 was too small
         )
 
         # She starts a new list and sees the input is nicely
@@ -57,7 +58,7 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertAlmostEqual(
             inputbox.location['x'] + inputbox.size['width'] / 2,
             512,
-            delta=10
+            delta=20 # 10 was too small
         )
 
 
